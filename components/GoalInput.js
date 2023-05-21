@@ -1,4 +1,4 @@
-import {View, Text, Modal, TextInput, Pressable, StyleSheet} from "react-native";
+import {View, Text, Modal, TextInput, Pressable, StyleSheet, Image} from "react-native";
 import {useState} from "react";
 
 export default function GoalInput(props){
@@ -16,6 +16,10 @@ export default function GoalInput(props){
   return (
     <Modal visible={visible} animationType="slide">
       <View style={styles.goalInputContainer}>
+        <Image
+          style={styles.image}
+          source={require('../assets/images/goal.png')}
+        />
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.textInput}
@@ -46,10 +50,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#5e0acc'
   },
   inputContainer: {
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   textInput:{
     flex:1,
+    height:45,
     backgroundColor: '#fff',
     padding:10,
     color: '#5e0acc',
@@ -70,5 +75,10 @@ const styles = StyleSheet.create({
   },
   pressedItem:{
     opacity: 0.5
+  },
+  image:{
+    width: 50,
+    height:50,
+    marginBottom: 20,
   }
 })
